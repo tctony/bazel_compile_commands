@@ -1,6 +1,6 @@
 """Dependencies required to use bazel_compile_commands"""
 
-deps = {
+bazel_compile_commands_deps = {
     "rules_python": {
         "url": "https://github.com/bazelbuild/rules_python/releases/download/0.0.2/rules_python-0.0.2.tar.gz",
         "strip_prefix": "rules_python-0.0.2",
