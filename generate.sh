@@ -15,6 +15,8 @@ OPTION="--experimental_action_listener=$ACTION_LISTENER"
 fi
 bazel build $OPTION $*
 
+echo "begin to generate\n..."
 python3 ./tools/bazel_compile_commands/actions/generate_compile_commands_json.py
+echo "done"
 
 exit 0
