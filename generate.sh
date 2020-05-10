@@ -6,6 +6,15 @@ if [ "$#" -lt 1 ]; then
     exit 1
 fi
 
-bazel build --experimental_action_listener=//tools/bazel_compile_commands/actions:generate_compile_commands_listener $*
+ACTION_LISTENER="//tools/bazel_compile_commands/actions:generate_compile_commands_listener"
+if grep -q $ACTION_LISTENER .bazelrc
+then
+OPTION=""
+else
+OPTION="--experimental_action_listener=$ACTION_LISTENER"
+fi
+bazel build $OPTION $*
+
 python3 ./tools/bazel_compile_commands/actions/generate_compile_commands_json.py
+
 exit 0
