@@ -59,7 +59,6 @@ def _get_compile_commands(path, command_directory):
 
 def main(argv):
     source_path = os.path.join(os.path.dirname(__file__), "../../..")
-    print(source_path)
     action_outs = os.path.join(
         source_path,
         "bazel-bin/../extra_actions",
