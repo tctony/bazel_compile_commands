@@ -2,8 +2,8 @@
 1. clone or copy this repo to `${workspaceFolder}/tools/bazel_compile_commands`
 2. load dependencies in WORKSPACE 
 ```
-load("//tools/bazel_compile_commands:deps_util.bzl", "bazel_compile_commands_deps")
-bazel_compile_commands_deps()
+load("//tools/bazel_compile_commands:deps_load.bzl", "bazel_compile_commands_deps_load")
+bazel_compile_commands_deps_load()
 ```
 3. add option to .bazelrc
 ```

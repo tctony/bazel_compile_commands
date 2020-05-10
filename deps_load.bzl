@@ -6,4 +6,4 @@ load("deps.bzl", "bazel_compile_commands_deps")
 
 def bazel_compile_commands_deps_load():
     for name in bazel_compile_commands_deps:
-        maybe(http_archive, name, **deps[name])
+        maybe(http_archive, name, **bazel_compile_commands_deps[name])
