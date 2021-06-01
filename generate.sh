@@ -7,7 +7,7 @@ if [ "$#" -lt 1 ]; then
 fi
 
 ACTION_LISTENER="//tools/bazel_compile_commands/actions:generate_compile_commands_listener"
-if grep -q $ACTION_LISTENER .bazelrc
+if grep -q "^build --$ACTION_LISTENER" .bazelrc
 then
 OPTION=""
 else
